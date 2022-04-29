@@ -1,0 +1,11 @@
+
+
+
+.banner-image{
+    background-image: url(../../Image/banner-img.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 600px;
+    object-fit: cover;
+}
