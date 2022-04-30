@@ -5,6 +5,7 @@ import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import Imggallery from './components/Imggallery/Imggallery';
 import MiddleSection from './components/MiddleSection/MiddleSection';
+import Products from './components/Products/Products';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
    <Header/>
    <Banner />
    <MiddleSection/>
+   <Products/>
    <Imggallery/>
    <Footer/>
     </div>
