@@ -4,13 +4,14 @@ import './App.css';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 
-import Products from './components/Products/Products';
+
 import Login from './Pages/Login/Login';
 import Register from './Pages/Register/Register';
 import {  Routes, Route } from "react-router-dom";
 import Home from './Pages/Home/Home';
 import Blog from './Pages/Blog/Blog';
-import ProductInventory from './Pages/ProductInvetory/ProductInventory';
+
+import Inventory from './Pages/Inventory/Inventory';
 
 function App() {
   return (
@@ -20,7 +21,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/blog" element={<Blog />}></Route>
-        <Route path="/inventory/:id" element={<ProductInventory/>}></Route>
+        <Route path="/inventory/:id" element={<Inventory/>}></Route>
+    
 
         <Route path="/register" element={<Register />}></Route>
         <Route path="/login" element={<Login />}></Route>

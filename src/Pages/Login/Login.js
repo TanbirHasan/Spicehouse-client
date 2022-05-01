@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import {
   useAuthState,
   useSendPasswordResetEmail,
@@ -7,6 +7,9 @@ import {
 import auth from "../../firebase.init"
 
 const Login = () => {
+
+ 
+
 
    const [signInWithEmailAndPassword, user, loading, error] =
      useSignInWithEmailAndPassword(auth);
