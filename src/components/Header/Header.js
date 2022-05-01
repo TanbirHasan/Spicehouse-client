@@ -4,6 +4,7 @@ import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/solid";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 import logo from "../../Image/Logo.png"
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   
@@ -42,34 +43,38 @@ const Header = () => {
                     </div>
                     <div className="hidden sm:block sm:ml-auto">
                       <div className="flex space-x-4">
-                        <a
-                          href="/home"
-                          className="text-gray-300 hover:bg-gray-700 hover:text-white block
+                        <Link to="/">
+                          <span
+                            className="text-gray-300 hover:bg-gray-700 hover:text-white block
                     px-3 py-2 rounded-md text-base font-medium"
-                        >
-                          Home
-                        </a>
-                        <a
-                          href="/home"
-                          className="text-gray-300 hover:bg-gray-700 hover:text-white block
+                          >
+                            Home
+                          </span>
+                        </Link>
+                        <Link to="/blog">
+                          <span
+                            className="text-gray-300 hover:bg-gray-700 hover:text-white block
                     px-3 py-2 rounded-md text-base font-medium"
-                        >
-                          Contact
-                        </a>
-                        <a
-                          href="/home"
-                          className="text-gray-300 hover:bg-gray-700 hover:text-white block
+                          >
+                            Blog
+                          </span>
+                        </Link>
+                        <Link to="/register">
+                          <span
+                            className="text-gray-300 hover:bg-gray-700 hover:text-white block
                     px-3 py-2 rounded-md text-base font-medium"
-                        >
-                          About
-                        </a>
-                        <a
-                          href="/home"
-                          className="text-gray-300 hover:bg-gray-700 hover:text-white block
+                          >
+                            Register
+                          </span>
+                        </Link>
+                        <Link to="/login">
+                          <span
+                            className="text-gray-300 hover:bg-gray-700 hover:text-white block
                     px-3 py-2 rounded-md text-base font-medium"
-                        >
-                          Know
-                        </a>
+                          >
+                            Login
+                          </span>
+                        </Link>
                       </div>
                     </div>
                   </div>

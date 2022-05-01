@@ -1,21 +1,31 @@
 
 import './App.css';
-import Banner from './components/Banner/Banner';
+
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
-import Imggallery from './components/Imggallery/Imggallery';
-import MiddleSection from './components/MiddleSection/MiddleSection';
+
 import Products from './components/Products/Products';
+import Login from './Pages/Login/Login';
+import Register from './Pages/Register/Register';
+import {  Routes, Route } from "react-router-dom";
+import Home from './Pages/Home/Home';
+import Blog from './Pages/Blog/Blog';
 
 function App() {
   return (
     <div className="App">
-   <Header/>
-   <Banner />
-   <MiddleSection/>
-   <Products/>
-   <Imggallery/>
-   <Footer/>
+      <Header />
+
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/blog" element={<Blog />}></Route>
+        <Route path="/products" element={<Products />}></Route>
+
+        <Route path="/register" element={<Register />}></Route>
+        <Route path="/login" element={<Login />}></Route>
+      </Routes>
+
+      <Footer />
     </div>
   );
 }
