@@ -2,7 +2,8 @@ import React from 'react';
 import Banner from '../../components/Banner/Banner';
 import Imggallery from '../../components/Imggallery/Imggallery';
 import MiddleSection from '../../components/MiddleSection/MiddleSection';
-import Products from '../../components/Products/Products';
+import Products from '../Products/Products'
+
 
 const Home = () => {
     return (
@@ -11,6 +12,7 @@ const Home = () => {
         <Banner />
         <MiddleSection />
         <Products/>
+        
         <Imggallery />
 
       </div>

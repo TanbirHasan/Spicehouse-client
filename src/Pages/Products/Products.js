@@ -1,16 +1,13 @@
 
 import React, { useEffect, useState } from 'react';
+import useProducts from '../../Hooks/useProducts/useProducts';
 import ProductDetails from '../ProductDetails/ProductDetails';
 
 const Products = () => {
-    const [products , setProducts] = useState([]);
+    const [products , setProducts] = useProducts();
 
 
-    useEffect(() => {
-        fetch('data.json')
-        .then(res => res.json())
-        .then(data => setProducts(data))
-    }, [])
+ 
     return (
       <div>
         <h2 className="text-center my-5 text-3xl">Stored Products</h2>
