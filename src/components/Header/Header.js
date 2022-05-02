@@ -5,12 +5,16 @@ import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 import logo from "../../Image/Logo.png"
 import { Link } from 'react-router-dom';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 
 const Header = () => {
   
     function classNames(...classes) {
       return classes.filter(Boolean).join(" ");
     }
+
+      const [user] = useAuthState(auth);
 
     return (
       <div>
@@ -59,30 +63,49 @@ const Header = () => {
                             Blog
                           </span>
                         </Link>
-                        <Link to="/manageinventory">
+
+                        {
+                          user ?  <Link to="/manageinventory">
                           <span
                             className="text-gray-300 hover:bg-gray-700 hover:text-white block
                     px-3 py-2 rounded-md text-base font-medium"
                           >
-                            Explore-Spice
+                            Manage-Inventory
                           </span>
-                        </Link>
-                        <Link to="/register">
+                        </Link> : <span></span>
+                        }
+                       
+                        {
+                          !user ?   <Link to="/register">
                           <span
                             className="text-gray-300 hover:bg-gray-700 hover:text-white block
                     px-3 py-2 rounded-md text-base font-medium"
                           >
                             Register
                           </span>
-                        </Link>
-                        <Link to="/login">
+                        </Link> : <span></span>
+
+
+                        }
+
+                        {
+                          !user ?  <Link to="/login">
                           <span
                             className="text-gray-300 hover:bg-gray-700 hover:text-white block
                     px-3 py-2 rounded-md text-base font-medium"
                           >
                             Login
                           </span>
-                        </Link>
+                        </Link> : <button>Logout</button>
+                        }
+
+
+
+
+
+
+                       
+                       
                       </div>
                     </div>
                   </div>
