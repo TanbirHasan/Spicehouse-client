@@ -7,6 +7,7 @@ import logo from "../../Image/Logo.png"
 import { Link } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import { signOut } from 'firebase/auth';
 
 const Header = () => {
   
@@ -64,48 +65,50 @@ const Header = () => {
                           </span>
                         </Link>
 
-                        {
-                          user ?  <Link to="/manageinventory">
-                          <span
+                        {user ? (
+                          <Link to="/manageinventory">
+                            <span
+                              className="text-gray-300 hover:bg-gray-700 hover:text-white block
+                    px-3 py-2 rounded-md text-base font-medium"
+                            >
+                              Manage-Inventory
+                            </span>
+                          </Link>
+                        ) : (
+                          <span></span>
+                        )}
+
+                        {!user ? (
+                          <Link to="/register">
+                            <span
+                              className="text-gray-300 hover:bg-gray-700 hover:text-white block
+                    px-3 py-2 rounded-md text-base font-medium"
+                            >
+                              Register
+                            </span>
+                          </Link>
+                        ) : (
+                          <span></span>
+                        )}
+
+                        {!user ? (
+                          <Link to="/login">
+                            <span
+                              className="text-gray-300 hover:bg-gray-700 hover:text-white block
+                    px-3 py-2 rounded-md text-base font-medium"
+                            >
+                              Login
+                            </span>
+                          </Link>
+                        ) : (
+                          <button
                             className="text-gray-300 hover:bg-gray-700 hover:text-white block
                     px-3 py-2 rounded-md text-base font-medium"
+                            onClick={() => signOut(auth)}
                           >
-                            Manage-Inventory
-                          </span>
-                        </Link> : <span></span>
-                        }
-                       
-                        {
-                          !user ?   <Link to="/register">
-                          <span
-                            className="text-gray-300 hover:bg-gray-700 hover:text-white block
-                    px-3 py-2 rounded-md text-base font-medium"
-                          >
-                            Register
-                          </span>
-                        </Link> : <span></span>
-
-
-                        }
-
-                        {
-                          !user ?  <Link to="/login">
-                          <span
-                            className="text-gray-300 hover:bg-gray-700 hover:text-white block
-                    px-3 py-2 rounded-md text-base font-medium"
-                          >
-                            Login
-                          </span>
-                        </Link> : <button>Logout</button>
-                        }
-
-
-
-
-
-
-                       
-                       
+                            Logout
+                          </button>
+                        )}
                       </div>
                     </div>
                   </div>
