@@ -4,6 +4,7 @@
         "name" : "VANILLA BEANS PLANIFOLIA",
         "description" : "Planifolia vanilla beans from Papua New Guinea (PNG) have a traditional creamy flavor that is similar to the Madagascar variety.",
         "price" : "102",
+        "suppliername": "Golden spice",
         "img" : "https://i.ibb.co/n1wMfXW/04-277x270.jpg",
         "quantity" : "10kg"
     },
@@ -12,6 +13,7 @@
          "name" : "PAPUA MACE",
         "description" : "apua mace tastes more delicate than nutmeg and is used for savoury dishes, oriental blends, and spicy vinegar, as well as for preserving vegetables.",
         "price" : "110",
+          "suppliername": "Bombay spice",
         "img" : "https://i.ibb.co/2qs0tgz/05-277x270.jpg",
         "quantity" : "20kg"
 
@@ -21,6 +23,7 @@
          "name" : "CLOVES",
         "description" : "Cloves are the aromatic flower buds of a tree in the family Myrtaceae, Syzygium aromaticum.Cloves contain fiber, vitamins, and minerals,",
         "price" : "200",
+          "suppliername": "Chilly chiles",
         "img" : "https://i.ibb.co/Sfp2cdW/07-277x270.jpg",
         "quantity" : "25kg"
 
@@ -30,6 +33,7 @@
           "name" : "BLACK PEPPER",
         "description" : "Black pepper is a flowering vine in the family Piperaceae, cultivated for its fruit, known as a peppercorn, which is used as a spice and seasoning. ",
         "price" : "220",
+          "suppliername": "The spice way",
         "img" : "https://i.ibb.co/2kX8WZn/11-277x270.jpg",
         "quantity" : "30kg"
 
@@ -39,6 +43,7 @@
          "name" : "WHITE PEPPER",
         "description" : "hite pepper, like black pepper, is made from the berries of the pepper plant, also known as the Piper nigrum. Unlike black pepper,",
         "price" : "230",
+          "suppliername": "The herb & spice",
         "img" : "https://i.ibb.co/rZ7ny6N/15-277x270.jpg",
         "quantity" : "35kg"
 
@@ -49,6 +54,7 @@
          "name" : "NUTMEG",
         "description" : "Nutmeg is the seed or ground spice of several species of the genus Myristica. Myristica fragrans is a dark-leaved evergreen tree cultivated ",
         "price" : "250",
+          "suppliername": "Spice & grocery",
         "img" : "https://i.ibb.co/rZ7ny6N/15-277x270.jpg",
         "quantity" : "25kg"
 
@@ -59,6 +65,7 @@
          "name" : "Black Curdamom",
         "description" : "Amomum subulatum, also known as Black cardamom, hill cardamom, Bengal cardamom, greater cardamom, Indian cardamom, Nepal cardamom,",
         "price" : "500",
+          "suppliername": "Golden spice",
         "img" : "https://i.ibb.co/KWgWLxn/10.webp",
         "quantity" : "18kg"
 
@@ -68,6 +75,7 @@
          "name" : "Star Anise",
         "description" : "Illicium verum is a medium-sized evergreen tree native to northeast Vietnam and southwest China. A spice commonly called star anise, staranise, star anise seed, ",
         "price" : "269",
+          "suppliername": "The spice shop",
         "img" : "https://i.ibb.co/gvc4M6k/42.webp",
         "quantity" : "18kg"
 

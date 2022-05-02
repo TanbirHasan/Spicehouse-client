@@ -16,8 +16,9 @@ const Inventory = () => {
           <h3><strong>Name : </strong>: {product.name}</h3>
           <p><strong>Description :</strong>{product.description}</p>
           <p><strong>Quantity :</strong>{product.quantity}</p>
+          <p><strong>Supplier name :</strong>{product.suppliername}</p>
           <p><strong>Price : </strong>{product.price}</p>
-          <button></button>
+          <button>Delivered</button>
           
         </div>
       </div>
