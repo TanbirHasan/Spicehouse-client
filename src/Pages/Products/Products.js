@@ -18,7 +18,7 @@ const Products = () => {
             //   <span>{items.name}</span>
             //   <span>{items.price}$</span>
             // </div>
-            <ProductDetails product={items} />
+            <ProductDetails key={items._id} product={items} />
           ))}
         </div>
       </div>
