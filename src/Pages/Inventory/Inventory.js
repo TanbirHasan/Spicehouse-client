@@ -9,7 +9,7 @@ const Inventory = () => {
 
    
     return (
-      <div className='w-1/2 mx-auto my-5 px-5 py-5 border-solid border-2'>
+      <div className='lg:w-1/2 lg:mx-auto my-5 px-5 py-5 border-solid border-2 sm:mx-5'>
         <h1 className='text-2xl '>Product Information</h1>
         <div >
             <img src={product.img}  alt="item"/>

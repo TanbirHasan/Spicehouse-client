@@ -53,42 +53,46 @@ const AddInventory = () => {
         >
           <input
             type="text"
-            className="border-solid border-2 px-3 py-2 w-2/4 block my-3"
-            {...register("photurl")}
+            className="border-solid border-2 px-3 py-2 lg:w-2/4 block my-3 "
+            {...register("photourl")}
             placeholder="Product Photo Url"
           />
 
           <input
+          type="text"
             placeholder="Enter Products Name"
-            className="border-solid border-2 px-3 py-2 w-2/4 block my-3"
-            {...register("name", { required: true, maxLength: 20 })}
+            className="border-solid border-2 px-3 py-2 lg:w-2/4 block my-3 "
+            {...register("name")}
           />
           <input
+          type="email"
             placeholder="Enter Email"
             value={user.email}
-            className="border-solid border-2 px-3 py-2 w-2/4 block my-3"
-            {...register("email", { required: true, maxLength: 20 })}
-           
+            className="border-solid border-2 px-3 py-2 lg:w-2/4 block my-3"
+            {...register("email")}
           />
           <input
+            type="number"
             placeholder="Enter Products Quantity"
-            className="border-solid border-2 px-3 py-2 w-2/4 block my-3"
-            {...register("quantity", { required: true, maxLength: 20 })}
+            className="border-solid border-2 px-3 py-2 lg:w-2/4 block my-3"
+            {...register("quantity")}
           />
           <input
+            type="text"
             placeholder="Enter Supplier Name"
-            className="border-solid border-2 px-3 py-2 w-2/4 block my-3"
-            {...register("suppliername", { required: true, maxLength: 20 })}
+            className="border-solid border-2 px-3 py-2 lg:w-2/4 block my-3"
+            {...register("suppliername")}
           />
           <textarea
+            type="text"
             placeholder="Enter Prducts description"
-            className="border-solid border-2 px-3 py-2 w-2/4 block my-3"
-            {...register("description", { required: true, maxLength: 20 })}
+            className="border-solid border-2 px-3 py-2 lg:w-2/4 block my-3"
+            {...register("description")}
           />
 
           <input
             type="number"
-            className="border-solid border-2 px-3 py-2 w-2/4 block my-3"
+            className="border-solid border-2 px-3 py-2 lg:w-2/4 block my-3"
             {...register("price")}
             placeholder="Enter Products price"
           />

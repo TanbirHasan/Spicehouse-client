@@ -25,9 +25,9 @@ const ManageInventory = () => {
       };
     return (
       <div>
-        <div className="flex flex-wrap justify-center px-10">
+        <div className="flex flex-wrap lg:flex-row justify-center px-10 sm:flex flex-col">
           {products.map((items) => (
-            <div className="w-1/4 flex justify-center flex-col border-solid border-2 mx-2 px-5 my-5">
+            <div className="lg:w-1/4 flex justify-center flex-col border-solid border-2 mx-2 px-5 my-5 sm:w-full">
               <img src={items.img} width="200" height="150" />
 
               <span>
