@@ -7,10 +7,10 @@ import {
 } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init"
 import Loading from "../../components/Loading/Loading"
-import { toast } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
 
 const Login = () => {
-   const [agree, setAgree] = useState(false);
+
 
    const emailRef = useRef("");
    const passRef = useRef("");
@@ -103,46 +103,28 @@ const Login = () => {
               </div>
             </div>
 
-            <div className="flex flex-col items-center justify-between">
-              <div className="flex items-center">
-                <input
-                  id="remember-me"
-                  name="remember-me"
-                  type="checkbox"
-                  onClick={() => setAgree(!agree)}
-                  className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
-                />
-                <label
-                  htmlFor="remember-me"
-                  className="ml-2 block text-sm text-gray-900"
-                >
-                  Accept Terms and Conditions
-                </label>
-              </div>
-
-              <div className="text-sm">
-                <a
-                  href="#"
-                  className="font-medium text-indigo-600 hover:text-indigo-500"
-                  onClick={resetPassword}
-                >
-                  Reset password?
-                </a>
-              </div>
-            </div>
-
             <div>
               <button
                 type="submit"
-                disabled={!agree}
                 className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
               >
                 Sign in
               </button>
             </div>
           </form>
+          <div className="flex flex-col items-center justify-between">
+            <div className="text-sm">
+              <button
+                className="font-medium text-indigo-600 hover:text-indigo-500"
+                onClick={resetPassword}
+              >
+                Reset password?
+              </button>
+            </div>
+          </div>
         </div>
       </div>
+      <ToastContainer></ToastContainer>
       {errorElement}
     </div>
   );
