@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 const ProductDetails = ({product}) => {
     const {_id,name,img,price,quantity,description} = product;
- 
+
 
      const navigate = useNavigate();
 
@@ -12,7 +12,7 @@ const ProductDetails = ({product}) => {
      };
  
 
-     
+
 
     return (
       <div className="lg:w-1/4 flex justify-center flex-col items-center px-5 text-center border-solid border-2 mx-5 my-3">
