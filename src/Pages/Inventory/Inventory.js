@@ -5,16 +5,20 @@ import useProductdetails from '../../Hooks/useProductdetails/useProductdetails';
 const Inventory = () => {
        const { id } = useParams();
        const [product] = useProductdetails(id);
-       const quantitynumber = product.quantity;
-       console.log(quantitynumber)
+      
+     
      
          const [quantity, setQuantity] = useState();
 
+         useEffect(() => {
+           setQuantity(product.quantity);
+         }, [product]);
 
-       useEffect(() => {
-         setQuantity(quantitynumber);
 
-       }, [quantitynumber])
+       
+
+
+      
 
      
     
@@ -22,33 +26,29 @@ const Inventory = () => {
  
 
        const reduceQuantity = (id) => {
+         
+             setQuantity(quantity - 1);
 
-       setQuantity(quantity - 1)
+             console.log(quantity);
 
-      
+             const updatedquantity = { quantity };
 
-        const updatedquantity = {quantity};
+             console.log(updatedquantity);
 
-        console.log(updatedquantity);
+             const url = `http://localhost:5000/reduce/${id}`;
+             fetch(url, {
+               method: "PUT",
+               headers: {
+                 "Content-Type": "application/json",
+               },
+               body: JSON.stringify(updatedquantity),
+             })
+               .then((res) => res.json())
+               .then((data) => {
+                 console.log("succes", data);
+               });
 
-
-        const url = `http://localhost:5000/reduce/${id}`;
-        fetch(url, {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(updatedquantity),
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            console.log("succes", data);
-            alert("Quantity updated succesfully");
-          });
-
-      
        
-
 
        };
       const amountref = useRef();
@@ -109,17 +109,30 @@ const Inventory = () => {
               <strong>Price : </strong>
               {product.price}
             </p>
-            <button onClick={() => reduceQuantity(product._id)}>
+            <button
+              onClick={() => reduceQuantity(product._id)}
+              className="flex mb-3 bg-orange-600 text-white rounded-md px-2 py-2 w-1/2"
+            >
               Delivered
             </button>
           </div>
         </div>
         <div className="flex flex-col items-center">
           <h2>Restock Items</h2>
-          <form className="flex flex-col w-1/2 px-5 py-10 mx-5 my-5  border-solid border-2" onSubmit={(e) => handlerestock(e,id)}>
+          <form
+            className="flex flex-col w-1/2 px-5 py-10 mx-5 my-5  border-solid border-2"
+            onSubmit={(e) => handlerestock(e, id)}
+          >
             <label>Enter number of amount that you want Restock </label>
-            <input type="number" className="border-solid border-2 my-5" ref={amountref} />
-            <button className="flex mb-3 bg-orange-600 text-white rounded-md px-2 py-2 w-1/4" type='submit'>
+            <input
+              type="number"
+              className="border-solid border-2 my-5"
+              ref={amountref}
+            />
+            <button
+              className="flex mb-3 bg-orange-600 text-white rounded-md px-2 py-2 w-1/4"
+              type="submit"
+            >
               Submit
             </button>
           </form>

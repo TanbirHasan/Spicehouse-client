@@ -3,6 +3,7 @@ import './App.css';
 
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
+import { ToastContainer } from "react-toastify";
 
 
 import Login from './Pages/Login/Login';
@@ -17,6 +18,7 @@ import ManageInventory from './Pages/ManageInventory/ManageInventory';
 import AddInventory from './Pages/AddInventory/AddInventory';
 import RequireAuth from './RequireAuth';
 import MyItems from './Pages/MyItems/MyItems';
+import NotFound from './components/NotFound/NotFound';
 
 function App() {
   return (
@@ -26,31 +28,47 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/blog" element={<Blog />}></Route>
-        <Route path="/inventory/:id" element={
-          <RequireAuth>
-            <Inventory/>
-          </RequireAuth>
-        }></Route>
+        <Route
+          path="/inventory/:id"
+          element={
+            <RequireAuth>
+              <Inventory />
+            </RequireAuth>
+          }
+        ></Route>
         <Route path="/products" element={<Products />}></Route>
-        <Route path="/manageinventory" element={
-          <RequireAuth>
-            <ManageInventory/>
-          </RequireAuth>
-        }></Route>
-        <Route path="/myitems" element={<RequireAuth>
-          <MyItems/>
-        </RequireAuth>}></Route>
-        <Route path="/addinventory" element={
-          <RequireAuth>
-            <AddInventory/>
-          </RequireAuth>
-        }></Route>
+        <Route
+          path="/manageinventory"
+          element={
+            <RequireAuth>
+              <ManageInventory />
+            </RequireAuth>
+          }
+        ></Route>
+        <Route
+          path="/myitems"
+          element={
+            <RequireAuth>
+              <MyItems />
+            </RequireAuth>
+          }
+        ></Route>
+        <Route
+          path="/addinventory"
+          element={
+            <RequireAuth>
+              <AddInventory />
+            </RequireAuth>
+          }
+        ></Route>
 
         <Route path="/register" element={<Register />}></Route>
         <Route path="/login" element={<Login />}></Route>
+        <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
 
       <Footer />
+      <ToastContainer />
     </div>
   );
 }

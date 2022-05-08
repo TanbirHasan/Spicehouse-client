@@ -19,7 +19,7 @@ const AddInventory = () => {
          body: JSON.stringify(data),
        })
          .then((res) => res.json())
-         .then((result) => console.log(data));
+         .then((result) => alert("Data added successfully"));
      };
     return (
       <div className="mx-10 my-10">
@@ -54,7 +54,7 @@ const AddInventory = () => {
           <input
             type="text"
             className="border-solid border-2 px-3 py-2 lg:w-2/4 block my-3 "
-            {...register("photourl")}
+            {...register("img")}
             placeholder="Product Photo Url"
           />
 
