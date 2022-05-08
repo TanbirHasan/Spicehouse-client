@@ -1,14 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 const ProductDetails = ({product}) => {
     const {_id,name,img,price,quantity,description} = product;
+ 
 
      const navigate = useNavigate();
 
      const navigattoproductDetails = (id) => {
        navigate(`/inventory/${id}`);
      };
+ 
+
+     
+
     return (
       <div className="lg:w-1/4 flex justify-center flex-col items-center px-5 text-center border-solid border-2 mx-5 my-3">
         <img src={img} width="200" height="150" />

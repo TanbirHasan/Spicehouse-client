@@ -7,6 +7,7 @@ import {
 } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init"
 import Loading from "../../components/Loading/Loading"
+
 import { toast, ToastContainer } from 'react-toastify';
 
 const Login = () => {
@@ -26,9 +27,9 @@ const Login = () => {
 
    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
 
-   if (loading || sending) {
-     return <Loading></Loading>;
-   }
+    if (loading) {
+      return <p>Loading...</p>;
+    }
 
    if (user) {
      navigate(from, { replace: true });

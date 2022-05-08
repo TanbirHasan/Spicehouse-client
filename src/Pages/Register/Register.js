@@ -5,6 +5,7 @@ import {
   useUpdateProfile,
 } from "react-firebase-hooks/auth";
 import { useNavigate } from 'react-router-dom';
+import Loading from '../../components/Loading/Loading';
 import Sociallogin from '../../components/SocialLogin/SocialLogin';
 import auth from '../../firebase.init';
 
@@ -16,7 +17,7 @@ const Register = () => {
 
 
 
-   const [createUserWithEmailAndPassword, user, error] =
+   const [createUserWithEmailAndPassword, user,loading, error] =
      useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
    const [updateProfile, updating, updateerror] = useUpdateProfile(auth);
@@ -27,6 +28,9 @@ const Register = () => {
    const emailref = useRef(" ");
    const passref = useRef(" ");
 
+    if (loading || updating) {
+      return <Loading></Loading>;
+    }
 
       if (user) {
         navigate("/");
